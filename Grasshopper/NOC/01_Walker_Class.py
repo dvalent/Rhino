@@ -7,21 +7,22 @@ class Walker:
     def __init__(self):
         self.x = 0
         self.y = 0
+        self.z = 0
         
     def point(self):
-        shape = rs.AddPoint(self.x,self.y,0)
+        shape = rs.AddPoint(self.x,self.y,self.z)
         return shape
         
     def step(self):
-        choice = r.randint(0,3)
-        if choice == 0:
-            self.x += 1
-        elif choice == 1:
-            self.x -= 1
-        elif choice == 2:
-            self.y += 1
-        else:
-            self.y -= 1
+        
+        stepX = r.uniform(-1,1)
+        stepY = r.uniform(-1,1)
+        stepZ = r.uniform(-1,1)
+        
+        self.x += stepX
+        self.y += stepY
+        self.z += stepZ
+
             
             
 w = Walker()
